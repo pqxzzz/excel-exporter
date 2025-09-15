@@ -20,21 +20,15 @@ export default async function handler(req, res) {
 
   const form = formidable({});
   form.parse(req, async (err, fields, files) => {
-    if (err) {
-      console.error("Erro no parse:", err);
-      return res.status(500).send("Erro ao processar upload");
-    }
+    if (err) return res.status(500).send("Erro no parse");
 
     try {
-      // pega o arquivo enviado (input name="file")
-      const file = files.file;
-      const buffer = await fs.promises.readFile(file.filepath);
+      const file = files.file; // name="file" do input
+      const buffer = await file.toBuffer(); //
 
-      // processa com sua lógica
       const data = await parseExcelBuffer(buffer);
       const outBuffer = await exportToExcelBuffer(data);
 
-      // envia arquivo para download
       res.setHeader("Content-Disposition", 'attachment; filename="saida.xlsx"');
       res.setHeader(
         "Content-Type",
