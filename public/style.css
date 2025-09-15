@@ -1,46 +1,76 @@
+/* Fundo inspirado no estilo Taylor Swift */
 body {
-  font-family: Arial, sans-serif;
-  background: #f8f9fa;
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(135deg, #b993d6, #8ca6db);
   margin: 0;
   padding: 0;
+  color: #333;
+  position: relative;
+  min-height: 100vh;
 }
 
+/* Overlay com imagem de fundo suave */
+.overlay {
+  background: url("https://preview.redd.it/what-are-your-favorite-taylor-memes-v0-2fqf4ufry70d1.jpeg?width=320&crop=smart&auto=webp&s=f8dfe4a1abffdb898a9875e5365167647d120477");
+  opacity: 0.2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+/* Container central estilo card */
 .container {
-  max-width: 400px;
+  max-width: 500px;
   margin: 5rem auto;
-  padding: 2rem;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
+/* Título com fonte cursiva */
 h1 {
-  font-size: 1.5rem;
+  font-family: "Great Vibes", cursive;
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: #663399; /* lilás profundo */
+}
+
+.subtitle {
+  font-size: 1rem;
   margin-bottom: 1.5rem;
-  color: #333;
+  color: #444;
+  font-style: italic;
 }
 
 input[type="file"] {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
+/* Botão estilizado com cores TS */
 button {
-  background: #007bff;
+  background: linear-gradient(90deg, #d16ba5, #c777b9, #8ca6db);
   color: white;
   border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 6px;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.2s ease;
+  font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
-  background: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 #status {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   font-weight: bold;
+  color: #222;
 }
