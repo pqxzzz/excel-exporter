@@ -1,7 +1,8 @@
 // api/upload.js (Vercel / Next-style)
 // instalar: npm i formidable
 // api/upload.js
-import { IncomingForm } from "formidable";
+import formidablePkg from "formidable";
+const { IncomingForm } = formidablePkg;
 import { parseExcelBuffer } from "../src/parser.js";
 import { exportToExcelBuffer } from "../src/exporter.js";
 
