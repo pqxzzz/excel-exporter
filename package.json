@@ -16,6 +16,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "18.x"
+  },
   "type": "module",
   "dependencies": {
     "exceljs": "^4.4.0",
