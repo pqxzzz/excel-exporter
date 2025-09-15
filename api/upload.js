@@ -2,8 +2,8 @@
 // instalar: npm i formidable
 // api/upload.js
 import formidable from "formidable";
-import { parseExcelBuffer } from "../../src/parser.js";
-import { exportToExcelBuffer } from "../../src/exporter.js";
+import { parseExcelBuffer } from "../src/parser.js";
+import { exportToExcelBuffer } from "../src/exporter.js";
 
 export const config = {
   api: { bodyParser: false }
