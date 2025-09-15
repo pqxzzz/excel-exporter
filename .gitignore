@@ -1,0 +1,13 @@
+# Node modules
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos de sistema do Mac
+.DS_Store
+
+# Arquivos de saída do Excel (opcional)
+*.xlsx
