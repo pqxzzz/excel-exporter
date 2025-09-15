@@ -5,8 +5,8 @@
 import ExcelJs from "exceljs";
 import path from "path";
 import fs from "fs";
-import { parseExcel } from "../src/parser.js";
-import { exportToExcel } from "../src/exporter.js";
+import { parseExcelFile } from "../src/parser.js";
+import { exportToExcelFile } from "../src/exporter.js";
 import { fileURLToPath } from "url";
 
 import os from "os";
@@ -41,16 +41,11 @@ const fileName = `${baseName}_${dateTimeString}.xlsx`;
 
 const outputPath = path.join(desktopPath, fileName);
 
-console.log("Arquivo salvo em: ", outputPath);
-
 (async () => {
-  console.log("trying!");
   try {
-    const data = await parseExcel(inputPath);
-    console.log("#Dados estruturados: ", data);
+    const data = await parseExcelFile(inputPath);
 
-    await exportToExcel(data, outputPath);
-    console.log("#Excel criado: ", outputPath);
+    await exportToExcelFile(data, outputPath);
   } catch (err) {
     console.log(err);
     console.error("❌ Erro ao ler o arquivo Excel:", err.message);

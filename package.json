@@ -9,7 +9,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bin/index.js"
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js",
+    "cli": "node bin/index.js"
   },
   "keywords": [],
   "author": "",
