@@ -1,7 +1,7 @@
 // api/upload.js (Vercel / Next-style)
 // instalar: npm i formidable
 // api/upload.js
-import formidable from "formidable";
+import { IncomingForm } from "formidable";
 import { parseExcelBuffer } from "../src/parser.js";
 import { exportToExcelBuffer } from "../src/exporter.js";
 
@@ -13,7 +13,7 @@ export default async function handler(req, res) {
   if (req.method !== "POST")
     return res.status(405).send("Método não permitido");
 
-  const form = new formidable.IncomingForm();
+  const form = new IncomingForm({ multiples: false });
 
   form.parse(req, async (err, fields, files) => {
     if (err) return res.status(500).send("Erro no parse do formulário");
